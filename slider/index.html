@@ -25,21 +25,33 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .slide {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 50vw; /* Ajusta el tamaño del círculo */
+  height: 50vw; /* Ajusta el tamaño del círculo */
+  max-width: 400px; /* Tamaño máximo para mantener el círculo en pantallas grandes */
+  max-height: 400px; /* Tamaño máximo para mantener el círculo en pantallas grandes */
+  border-radius: 50%;
+  overflow: hidden;
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
 }
 
 .slide.current {
   opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra todo el círculo */
+  border-radius: 50%;
 }
 
 .slide .footer {
@@ -50,22 +62,7 @@ body {
   color: #e5ebf3;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
-}
-
-.slide:first-child {
-  background: url("1.jpg") no-repeat center top/cover;
-}
-
-.slide:nth-child(2) {
-  background: url("2.jpg") no-repeat center top/cover;
-}
-
-.slide:nth-child(3) {
-  background: url("3.jpg") no-repeat center top/cover;
-}
-
-.slide:nth-child(4) {
-  background: url("4.jpg") no-repeat center top/cover;
+  border-radius: 0 0 50% 50%; /* Mantiene el footer dentro del círculo */
 }
 
 .buttons button#prev {
@@ -100,15 +97,19 @@ body {
 <body>
   <div class="slider">
     <div class="slide current">
+      <img src="1.jpg" alt="Image 1">
       <div class="footer">Image 1</div>
     </div>
     <div class="slide">
+      <img src="2.jpg" alt="Image 2">
       <div class="footer">Image 2</div>
     </div>
     <div class="slide">
+      <img src="3.jpg" alt="Image 3">
       <div class="footer">Image 3</div>
     </div>
     <div class="slide">
+      <img src="4.jpg" alt="Image 4">
       <div class="footer">Image 4</div>
     </div>
   </div>
