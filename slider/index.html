@@ -6,92 +6,101 @@
   <title>Full-Screen Responsive Image Slider</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
   <link rel="stylesheet" href="./style.css">
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: "Lexend", sans-serif;
-  background-color: #362a2b;
-  color: #e5ebf3;
-}
+    body {
+      font-family: "Lexend", sans-serif;
+      background-color: #362a2b;
+      color: #e5ebf3;
+    }
 
-.slider {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
+    .slider {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-.slide {
-  position: absolute;
-  width: 50vw; /* Ajusta el tamaño del círculo */
-  height: 50vw; /* Ajusta el tamaño del círculo */
-  max-width: 400px; /* Tamaño máximo para mantener el círculo en pantallas grandes */
-  max-height: 400px; /* Tamaño máximo para mantener el círculo en pantallas grandes */
-  border-radius: 50%;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
+    .slide {
+      position: absolute;
+      width: 60vw; /* Tamaño más grande */
+      height: 60vw; /* Tamaño más grande */
+      max-width: 500px; /* Tamaño máximo para mantener el círculo en pantallas grandes */
+      max-height: 500px; /* Tamaño máximo para mantener el círculo en pantallas grandes */
+      border-radius: 50%;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
 
-.slide.current {
-  opacity: 1;
-}
+    .slide.current {
+      opacity: 1;
+    }
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que la imagen cubra todo el círculo */
-  border-radius: 50%;
-}
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Asegura que la imagen cubra todo el círculo */
+      border-radius: 50%;
+    }
 
-.slide .footer {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  color: #e5ebf3;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 0 0 50% 50%; /* Mantiene el footer dentro del círculo */
-}
+    .slide .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: #e5ebf3;
+      background-color: transparent; /* Fondo transparente */
+      padding: 10px;
+      line-height: 1.5; /* Ajuste de espacio entre líneas */
+      border-radius: 0 0 50% 50%; /* Mantiene el footer dentro del círculo */
+      font-size: 1.1rem; /* Ajusta el tamaño de la fuente */
+    }
 
-.buttons button#prev {
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-}
+    .slide .footer:last-child {
+      display: inline-block;
+      white-space: normal;
+    }
 
-.buttons button#next {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-}
+    .buttons button#prev {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
 
-.buttons button {
-  border: 2px solid #e5ebf3;
-  background-color: transparent;
-  color: #e5ebf3;
-  cursor: pointer;
-  padding: 13px 15px;
-  border-radius: 50%;
-  outline: none;
-}
+    .buttons button#next {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+    }
 
-.buttons button:hover {
-  background-color: #e5ebf3;
-  color: #362a2b;
-}
-</style>
+    .buttons button {
+      border: 2px solid #e5ebf3;
+      background-color: transparent;
+      color: #e5ebf3;
+      cursor: pointer;
+      padding: 10px; /* Tamaño más pequeño */
+      border-radius: 50%;
+      outline: none;
+    }
+
+    .buttons button:hover {
+      background-color: #e5ebf3;
+      color: #362a2b;
+    }
+  </style>
 </head>
 
 <body>
@@ -110,7 +119,7 @@ body {
     </div>
     <div class="slide">
       <img src="4.jpg" alt="Image 4">
-      <div class="footer">Kareen Alejandra Latorre Martínez</div>
+      <div class="footer">Kareen Alejandra<br>Latorre Martínez</div> <!-- Nombre en dos líneas -->
     </div>
   </div>
   <div class="buttons">
@@ -164,7 +173,6 @@ body {
     if (auto) {
       slideInterval = setInterval(nextSlide, intervalTime);
     }
-
   </script>
 
 </body>
