@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Full-Screen Responsive Image Slider</title>
+  <title>Full-Screen Responsive Image Slider</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
   <link rel="stylesheet" href="./style.css">
 <style>
@@ -42,25 +42,30 @@ body {
   opacity: 1;
 }
 
+.slide .footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #e5ebf3;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
 
 .slide:first-child {
-  background: url("1.jpg") no-repeat
-    center top/cover;
+  background: url("1.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(2) {
-  background: url("2.jpg") no-repeat
-    center top/cover;
+  background: url("2.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(3) {
-  background: url("3.jpg") no-repeat
-    center top/cover;
+  background: url("3.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(4) {
-  background: url("4.jpg") no-repeat
-    center top/cover;
+  background: url("4.jpg") no-repeat center top/cover;
 }
 
 .buttons button#prev {
@@ -89,40 +94,29 @@ body {
   background-color: #e5ebf3;
   color: #362a2b;
 }
-
-@media (min-width: 640px) and (min-height: 640px) {
-  .slide .content {
-    bottom: 70px;
-    left: -600px;
-    width: 600px;
-    padding: 2rem;
-    line-height: 1.6;
-  }
-
-  .slide .content h1 {
-    font-size: 2rem;
-  }
-
-  .slide.current .content {
-    transform: translateX(600px);
-  }
-}
 </style>
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
   <div class="slider">
-    <div class="slide current"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
+    <div class="slide current">
+      <div class="footer">Image 1</div>
+    </div>
+    <div class="slide">
+      <div class="footer">Image 2</div>
+    </div>
+    <div class="slide">
+      <div class="footer">Image 3</div>
+    </div>
+    <div class="slide">
+      <div class="footer">Image 4</div>
+    </div>
   </div>
   <div class="buttons">
     <button id="prev"><i class="fas fa-arrow-left"></i></button>
     <button id="next"><i class="fas fa-arrow-right"></i></button>
   </div>
-  <!-- partial -->
+
   <script>
     const slides = document.querySelectorAll(".slide");
     const nextButton = document.getElementById("next");
